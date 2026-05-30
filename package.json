@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build:css": "sass ./shelter/style.scss ./shelter/main.css",
+    "watch:css": "sass --watch ./shelter/style.scss ./shelter/main.css"
+  },
+  "dependencies": {
+    "sacc": "^0.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.100.0"
+  }
+}
