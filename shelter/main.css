@@ -51,8 +51,13 @@ button:hover {
 }
 
 button {
+  font-family: "Georgia", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
   border-radius: 100px;
-  padding: 15px 45px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -330,7 +335,180 @@ nav .menu__choise {
   .about__section .about__div__desc {
     order: 1;
     max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .about__section .about__div__desc {
     align-items: center;
+  }
+}
+
+.find__section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 80px 40px 100px 40px;
+  background: #f6f6f6;
+}
+@media (max-width: 769px) {
+  .find__section {
+    padding: 80px 30px 100px 30px;
+  }
+}
+@media (max-width: 400px) {
+  .find__section {
+    padding: 42px 10px 42px 10px;
+    gap: 42px;
+  }
+}
+.find__section .find__text {
+  text-align: center;
+}
+.find__section .find__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  gap: 90px;
+}
+@media (max-width: 1200px) {
+  .find__section .find__cards {
+    gap: 40px;
+  }
+  .find__section .find__cards > :nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .find__section .find__cards > :nth-child(2) {
+    display: none;
+  }
+}
+@media (max-width: 750px) and (max-width: 450px) {
+  .find__section .find__cards {
+    flex-wrap: wrap;
+  }
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  position: absolute;
+}
+@media (max-width: 450px) {
+  .arrow {
+    position: static;
+    margin: 20px;
+  }
+}
+.arrow:first-of-type {
+  left: 0;
+}
+.arrow:last-of-type {
+  right: 0px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 9px;
+  width: 270px;
+  height: 435px;
+  background: #fafafa;
+}
+
+.card__btn {
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  padding: 0px;
+  width: 187px;
+  height: 52px;
+}
+
+.find__btn {
+  border: 0px;
+  border-radius: 100px;
+  width: 261px;
+  height: 52px;
+  background: #f1cdb3;
+}
+
+.help__section {
+  padding: 80px 40px 100px 40px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 769px) {
+  .help__section {
+    padding: 80px 69px 100px 69px;
+  }
+}
+@media (max-width: 400px) {
+  .help__section {
+    gap: 42px;
+    padding: 42px 15px 42px 15px;
+  }
+}
+
+.help__cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 55px 120px;
+}
+@media (max-width: 900px) {
+  .help__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 170px);
+    grid-template-rows: repeat(3, 113px);
+    gap: 55px 60px;
+  }
+}
+@media (max-width: 670px) {
+  .help__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: repeat(5, 87px);
+    gap: 30px;
+  }
+}
+@media (max-width: 670px) {
+  .help__cards svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+.help__cards .help__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 670px) {
+  .help__cards .help__card {
+    gap: 20px;
+  }
+}
+@media (max-width: 670px) {
+  .help__cards .help__card h4 {
+    font-size: 15px;
   }
 }
 
