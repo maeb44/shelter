@@ -17,7 +17,10 @@
   $second-family: "Arial", sans-serif;
   $third-family: "Inter", sans-serif;
 
-
+html{
+	padding: 0;
+	scroll-behavior: smooth;
+}
 button:hover{
 	cursor: pointer;
 	background: $color-primary-light;
@@ -34,7 +37,7 @@ button{
 %header-txt{
 	font-family: $font-family;
 	font-weight: 400;
-	color: $color-dark-xl;
+	color: $color-dark-l;
 }
 %paragraph-l-txt{
 	font-family: $second-family;
@@ -52,6 +55,8 @@ button{
 	color: $color-dark-m;
 }
 body{
+	overflow-x: hidden;
+
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
@@ -63,18 +68,10 @@ section{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
+	width: 100%;
 	max-width: 1280px;
-	padding: 80px 40px 100px 40px;
-	overflow: hidden;
-	@media(max-width:769px){
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-	@media (max-width:400px) {
-		padding: 42px 10px;
-	}
 }
+
 .white{color: $color-light-xl}
 h1,h2,h3,h4,h5{
 	@extend %header-txt;
@@ -124,12 +121,14 @@ a:active{
 	padding-top: 30px;
 	display: flex;
 	flex-direction: column;
-	background: $start-screen-gradient-background;
 	gap: 90px;
-	background: #5B483A;
+	background: $start-screen-gradient-background;
 	background: linear-gradient(90deg,rgba(91, 72, 58, 1) 0%, rgba(38, 36, 37, 1) 100%);
 	@media(max-width:769px){
 		gap: 60px;
+	}
+	@media(max-width:500px){
+		padding: 30px 10px 0px 10px;
 	}
 }
 nav{
@@ -137,7 +136,14 @@ nav{
 	max-width: 1280px;
 	width: 100%;
 	align-items: center;
-	justify-content: space-between; 
+	justify-content: space-between;
+	padding: 0 40px 0 40px; 
+	@media (max-width:1000px){
+		padding: 0 30px 0 30px;
+	}
+	@media (max-width:500px){
+		padding: 0 10px 0 10px;
+	}
 	.menu__logolink{
 		display: flex;
 		flex-direction: column;
@@ -205,6 +211,10 @@ nav{
 		max-width: 698px;
 		width: 100%;
 		object-fit: cover;
+		@media (max-width:800px) {
+			max-width:569px;
+		}
+
 	}
 	&__txt{
 		width: 100%;
@@ -239,10 +249,13 @@ nav{
 	}
 }
 .about__section{
-	@media (max-width:769px) {
-				
+	padding: 80px 40px 100px 40px;
+	@media (max-width:400px) {
+			padding: 42px 10px;	
 	}
+
 	.about__div{
+		
 		max-width: 1200px;
 		width: 100%;
 		display: flex;
@@ -363,13 +376,13 @@ nav{
 		height: 435px;
 		background: $color-light-s;
 	}
-	.card__btn{
-		border: 2px solid $color-primary;
-		border-radius: 100px;
-		padding: 0px;
-		width: 187px;
-		height: 52px;
-	}
+		.card__btn{
+			border: 2px solid $color-primary;
+			border-radius: 100px;
+			padding: 0px;
+			width: 187px;
+			height: 52px;
+		}
 	.find__btn{
 		border: 0px;
 		border-radius: 100px;
@@ -378,69 +391,192 @@ nav{
 		background: $color-primary;
 	}
 .help__section{
-	padding: 80px 40px 100px 40px;
-	display: flex;
-	gap: 60px;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	@media(max-width:769px){
-		padding: 80px 69px 100px 69px ;
-	}
-	@media(max-width:400px){
-		gap: 42px;
-		padding: 42px 15px 42px 15px ;
-	}
-}
-.help__cards{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	gap: 55px 120px;
-	@media (max-width:900px){
-		display: grid;
-		grid-template-columns: repeat(3,170px);
-		grid-template-rows: repeat(3,113px);
-		gap: 55px 60px;
-	}
-	@media (max-width:670px){
-		display: grid;
-		grid-template-columns: repeat(2,130px);
-		grid-template-rows: repeat(5,87px);
-		gap: 30px;
-	}
-	svg{
-		@media (max-width:670px){
-			width: 50px;
-			height: 50px;
-		}
-	}
-	.help__card{
+		padding: 80px 40px 100px 40px;
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		gap: 60px;
 		align-items: center;
-		gap: 30px;
-			@media (max-width:670px){
-				gap: 20px;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		@media(max-width:769px){
+			padding: 80px 69px 100px 69px ;
+		}
+		@media(max-width:400px){
+			gap: 42px;
+			padding: 42px 15px 42px 15px ;
+		}
+}
+	.help__cards{
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			gap: 55px 120px;
+			@media (max-width:900px){
+				display: grid;
+				grid-template-columns: repeat(3,170px);
+				grid-template-rows: repeat(3,113px);
+				gap: 55px 60px;
 			}
-		h4{
 			@media (max-width:670px){
-				font-size: 15px;
+				display: grid;
+				grid-template-columns: repeat(2,130px);
+				grid-template-rows: repeat(5,87px);
+				gap: 30px;
+			}
+			svg{
+				@media (max-width:670px){
+					width: 50px;
+					height: 50px;
+				}
+			}
+			.help__card{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 30px;
+					@media (max-width:670px){
+						gap: 20px;
+					}
+				h4{
+					@media (max-width:670px){
+						font-size: 15px;
+					}
+				}
+			}
+	}
+	.donation__section{
+		background: $color-light-l;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		padding: 80px 182px 100px 183px;
+		img{
+			@media (max-width:1000px) {
+				order: 2;
+			}
+			@media (max-width:600px) {
+				width: 260px;
+			}
+		}
+		@media (max-width:1000px) {
+			flex-wrap: wrap;
+			gap:60px;
+		}
+		@media (max-width:600px) {
+			gap: 42px;
+			padding: 42px 10px;
+		}
+	}
+	.donation__desc{
+		width: 380px;
+		min-width: 380px;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 20px;
+		flex-direction: column;
+		@media (max-width:400px) {
+			align-items: center;
+			width: 300px;
+			min-width: 300px;
+		}
+		button{
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 0px;
+			gap: 15px;
+			border-radius: 9px;
+			padding: 10px 15px;
+			background: $color-primary;
+			color: $color-dark-l;
+
+			span{
+				@media(max-width:400px){
+					font-size: 15px;
+				}
+			}
+
+		}	
+
+		p{
+			@extend %paragraph-s-txt;
+			@media(max-width:400px) {
+				padding: 0px 10px;
+				text-align: justify;
 			}
 		}
 	}
+
+footer{
+	width: 100vw;
+	max-width: 1280px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap:160px;
+	flex-wrap: wrap;
+	padding: 40px 40px 0 40px;
+	background: $start-screen-gradient-background;
+	background: linear-gradient(90deg,rgba(91, 72, 58, 1) 0%, rgba(38, 36, 37, 1) 100%);
+	@media (max-width:1050px) {
+		gap: 60px 65px;
+	}
+	@media (max-width:400px) {
+		padding: 30px 10px 0 10px;
+	}
+	img{
+		@media (max-width:400px) {
+			width: 260px;
+		}
+	}
+}
+.footer__card{
+	padding: 16px 0 60px 0;
+	display: flex;
+	flex-direction: column;
+	gap:40px;
+	align-items: flex-start;
+	justify-content: center;
+	@media (max-width:800px) {
+		padding: 0;
+	}
+	@media (max-width:400px) {
+		width: 300px;
+	}
+	div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 115%;
+		letter-spacing: 0.06em;
+		color: $color-primary;
+	}
+	span:hover,
+	svg:hover{
+		cursor: pointer;
+	}
+	h3{width: 279px;}
 }
 
 
 
 
 
-
-
+@media(max-width:769px){
+	.main__desc__img{
+		padding-left: 69px;
+	}
+}
 
 @media(max-width:400px){
 	.main__desc__img{
@@ -452,10 +588,11 @@ nav{
 	h2,h3{
 		font-size: 25px;
 	}
-}
-@media(max-width:769px){
-
-	.main__desc__img{
-		padding-left: 69px;
+	h5{
+		line-height: 160%;
+		text-wrap: nowrap;
+		letter-spacing: 0;
 	}
+
 }
+
