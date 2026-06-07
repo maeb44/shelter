@@ -1,7 +1,7 @@
 @use 'reset';
 
 	$color-light-xl: #fff;
-	$color-light-l: #f6f6f6;
+	$color-light-l: hsl(0, 0%, 96%);
 	$color-light-s: #fafafa;
 	$color-dark-s: #cdcdcd;
 	$color-dark-m: #b2b2b2;
@@ -25,7 +25,11 @@ button:hover{
 	cursor: pointer;
 	background: $color-primary-light;
 }
+button:active{
+	border: 0px;
+}
 button{
+	border: 0px;
 	font-family: $font-family;
 	font-weight: 400;
 	font-size: 17px;
@@ -55,14 +59,12 @@ button{
 	color: $color-dark-m;
 }
 body{
-	overflow-x: hidden;
-
 	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
 	align-items: center;
-	justify-content: center;
 	flex-direction: column;
+	&.hidden{
+		overflow: hidden;
+	}
 }
 section{
 	display: flex;
@@ -73,30 +75,30 @@ section{
 }
 
 .white{color: $color-light-xl}
-h1,h2,h3,h4,h5{
+h1,h2,h3,.h3-footer,h4,.h5,.h4{
 	@extend %header-txt;
 }
-h1{
+.h1{
 	font-size: 32px;
 	line-height: 110%;
 	letter-spacing: 0.06em;
 	color: $color-primary;
 }
-h2{
+h1,h2{
 	font-size: 44px;
 	line-height: 130%;
 }
-h3{
+h3,.h3-footer,.h1-pets{
 	font-size: 35px;
 	line-height: 130%;
 	letter-spacing: 0.06em;
 }
-h4{
+h4,.h4{
 	font-size: 20px;
 	line-height: 115%;
 	letter-spacing: 0.06em;
 }
-h5{
+.h5{
 	font-size: 15px;
 	line-height: 110%;
 	letter-spacing: 0.06em;
@@ -111,8 +113,12 @@ a{
 	font-family: $second-family;
 }
 a:active{
-	text-decoration: underline $color-primary 3px; ;
+	text-decoration: underline $color-primary 3px;
 }
+a.active{
+	text-decoration: underline $color-primary 3px;
+}
+
 .menu__logolink:active{
 	text-decoration: none;
 }
@@ -132,6 +138,7 @@ a:active{
 	}
 }
 nav{
+	position: relative;
 	display: flex;
 	max-width: 1280px;
 	width: 100%;
@@ -155,7 +162,7 @@ nav{
 		align-items: center;
 		justify-content: center;
 		gap:35px;
-		@media(max-width:720px) {
+		@media(max-width:767px) {
 			display: none;
 		}
 	}
@@ -164,41 +171,84 @@ nav{
 	width: 30px;
 	height: 30px;
 	position: relative;
+	z-index: 10;
 	display: none;
-	@media (max-width:720px) {
+	@media (max-width:767px) {
 		display: block;
 	}
 	span{
 		position: absolute;
+		transition: ease-out 0.3s;
+		width: 30px;
+		height: 2px;
+		background: $color-primary;
 
 		&:first-child{
 			top: 0px;
-			width: 30px;
-			height: 2px;
-			background: $color-primary;
 		}	
 		&:nth-child(2){
 			top:10px;
-			width: 30px;
-			height: 2px;
-			background: $color-primary;
 		}
 		&:last-child{
-			top:20px;
-			width: 30px;
-			height: 2px;
-			background: $color-primary;
+			top:19px;
 		}
-
+	}
+	&.active{
+		span{
+		height: 30px;
+		width: 2px;
+		&:first-child{
+			top: 0px;
+			left: 5px;
+		}	
+		&:nth-child(2){
+			top:0px;
+			left: 15px;
+		}
+		&:last-child{
+			top: 0px;
+			left: 25px;
+		}
+		}
+	}
+	&.black span{
+			background: $color-dark-l;
 	}
 }
+
 .burger-menu{
+		transition: left 0.3s ease-out;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: fixed;
+		top: 0px;
+		left:100vw;
+		z-index: 1;
+		gap: 40px;
 		width: 100vw;
 		height: 100vh;
 		background: $color-dark-3xl;
 		text-align: center;
+		@media (min-width:768px) {
 		display: none;
+		}
+		&.active{
+			left: 0px;
+		}
 }
+
+.burger__link{
+	font-family: $second-family;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 160%;
+	color: $color-dark-s !important;
+	&.active{
+		color: $color-light-s;
+	}
+}
+
 
 .main__desc{
 	display: flex;
@@ -244,7 +294,7 @@ nav{
 			color: $color-dark-s;
 		}
 	}
-	h2{
+	h1{
 		color: $color-light-xl;
 	}
 }
@@ -262,6 +312,14 @@ nav{
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
+		h2{
+			font-size: 35px;
+			@media (max-width:400px){
+				line-height: 130%;
+				letter-spacing: 0.06em;
+				font-size: 25px;
+			}
+		}
 		@media (max-width:769px){
 			flex-direction: column;
 			gap: 80px;
@@ -376,6 +434,13 @@ nav{
 		height: 435px;
 		background: $color-light-s;
 	}
+	.card:hover{
+		cursor: pointer;
+		button{
+				cursor: pointer;
+				background: $color-primary-light;
+		}
+	}
 		.card__btn{
 			border: 2px solid $color-primary;
 			border-radius: 100px;
@@ -440,7 +505,7 @@ nav{
 					@media (max-width:670px){
 						gap: 20px;
 					}
-				h4{
+				h4,.h4{
 					@media (max-width:670px){
 						font-size: 15px;
 					}
@@ -503,8 +568,7 @@ nav{
 			}
 
 		}	
-
-		p{
+		.don-txt{
 			@extend %paragraph-s-txt;
 			@media(max-width:400px) {
 				padding: 0px 10px;
@@ -514,7 +578,7 @@ nav{
 	}
 
 footer{
-	width: 100vw;
+	width: 100%;
 	max-width: 1280px;
 	display: flex;
 	align-items: center;
@@ -547,6 +611,10 @@ footer{
 		padding: 0;
 	}
 	@media (max-width:400px) {
+		&:last-of-type{
+		align-items: flex-start;
+		}
+		align-items: center;
 		width: 300px;
 	}
 	div{
@@ -565,7 +633,75 @@ footer{
 	svg:hover{
 		cursor: pointer;
 	}
-	h3{width: 279px;}
+	h3,.h3-footer{width: 279px;}
+}
+.header{
+	padding: 30px 40px;
+	@media (max-width:1000px) {
+		padding: 30px;
+	}
+	@media (max-width:500px) {
+		padding: 30px 20px;
+	}
+	a{
+		color: $color-dark-l
+	}
+		
+}
+.black-brg{
+	span{
+		background-color: $color-dark-l !important;
+	}
+}
+.black{
+		color: $color-dark-l ;
+}
+.find__pets{
+	padding: 80px 40px 100px 40px;
+	@media (max-width:1000px) {
+		padding: 60px 30px 70px 30px;
+	}
+	@media (max-width:500px) {
+		padding: 42px 10px;
+	}
+}
+.h1-pets{
+	
+}
+.div__btns{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	@media (max-width:400px) {
+		gap: 10px;
+	}
+	.arrow{
+		margin: 0px;
+		background: $color-light-l;
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 115%;
+		letter-spacing: 0.06em;
+		text-align: center;
+		position: static !important;
+		.active{
+			border: 2px solid $color-dark-3xl;
+			color: $color-dark-3xl;
+		}
+		.passive{
+			border: 2px solid $color-dark-s;
+			color: $color-dark-s;
+		}
+
+	}
+	.arrow:hover{
+		background:$color-primary ;
+	}
+}
+.number{
+		background: $color-primary !important;
 }
 
 
@@ -578,17 +714,17 @@ footer{
 	}
 }
 
-@media(max-width:400px){
+@media(max-width:430px){
 	.main__desc__img{
 		padding-left: 40px;
 	}
-	h1,h2,h3,h4,h5,h6,p{
+	h1,h2,h3,.h3-footer,h4,.h4,.h5,h6,p{
 		text-align: center;
 	}
-	h2,h3{
+	h1,h2,h3,.h3-footer,.h1-pets{
 		font-size: 25px;
 	}
-	h5{
+	.h5{
 		line-height: 160%;
 		text-wrap: nowrap;
 		letter-spacing: 0;
