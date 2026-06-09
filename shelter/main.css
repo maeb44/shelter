@@ -52,6 +52,7 @@ html {
 
 button:hover {
   cursor: pointer;
+  border: #fddcc4;
   background: #fddcc4;
 }
 
@@ -60,6 +61,7 @@ button:active {
 }
 
 button {
+  background: hsl(0, 0%, 96%);
   border: 0px;
   font-family: "Georgia", sans-serif;
   font-weight: 400;
@@ -435,6 +437,7 @@ nav .menu__choise {
 }
 
 .find__section {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -446,7 +449,7 @@ nav .menu__choise {
     padding: 80px 30px 100px 30px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .find__section {
     padding: 42px 10px 42px 10px;
     gap: 42px;
@@ -456,30 +459,67 @@ nav .menu__choise {
   text-align: center;
 }
 .find__section .find__cards {
+  margin: auto;
+  transition: transform 0.7s ease-out;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 990px;
   width: 100%;
   position: relative;
   gap: 90px;
 }
 @media (max-width: 1200px) {
+  .find__section .find__cards .card:last-of-type {
+    display: none;
+  }
   .find__section .find__cards {
     gap: 40px;
-  }
-  .find__section .find__cards > :nth-child(3) {
-    display: none;
+    max-width: 580px;
   }
 }
 @media (max-width: 750px) {
-  .find__section .find__cards > :nth-child(2) {
+  .find__section .find__cards .card:first-of-type {
     display: none;
   }
-}
-@media (max-width: 750px) and (max-width: 450px) {
   .find__section .find__cards {
-    flex-wrap: wrap;
+    max-width: 290px;
   }
+}
+
+.cards__wrapper {
+  overflow: hidden;
+  max-width: 990px;
+  width: 100%;
+  gap: 90px;
+}
+@media (max-width: 1200px) {
+  .cards__wrapper {
+    gap: 40px;
+    max-width: 580px;
+  }
+}
+@media (max-width: 750px) {
+  .cards__wrapper {
+    max-width: 290px;
+  }
+}
+.cards__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.row {
+  display: flex;
+  gap: 80px;
+  margin-top: -22px;
+  padding-bottom: 42px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .arrow {
@@ -487,30 +527,45 @@ nav .menu__choise {
   align-items: center;
   justify-content: center;
   padding: 0px;
+  top: 50%;
   border-radius: 100px;
   width: 52px;
   height: 52px;
   border: 2px solid #f1cdb3;
   position: absolute;
 }
-@media (max-width: 450px) {
+.arrow__left {
+  left: 40px;
+}
+.arrow__right {
+  right: 40px;
+}
+@media (max-width: 500px) {
   .arrow {
     position: static;
-    margin: 20px;
   }
 }
-.arrow:first-of-type {
-  left: 0;
+.arrow__left {
+  left: 40px;
 }
-.arrow:last-of-type {
-  right: 0px;
+.arrow__right {
+  right: 40px;
+}
+@media (max-width: 1200px) {
+  .arrow__left {
+    left: 30px;
+  }
+  .arrow__right {
+    right: 30px;
+  }
 }
 
 .card {
+  transition: 0.5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 30px;
   border-radius: 9px;
   width: 270px;
@@ -523,10 +578,12 @@ nav .menu__choise {
 }
 .card:hover button {
   cursor: pointer;
+  border: #fddcc4;
   background: #fddcc4;
 }
 
 .card__btn {
+  background: #fafafa;
   border: 2px solid #f1cdb3;
   border-radius: 100px;
   padding: 0px;

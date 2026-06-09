@@ -5,7 +5,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="main.css">
-	<link rel="icon" type="image/x-icon" href="./img/donation-dog.png">
+	<link rel="icon" type="image/x-icon" href="./assets/images/donation-dog.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
@@ -49,13 +49,13 @@
 				</p>
 				<button onclick='document.location="./pets.html"' class="main__desc_btn">Make a friend</button>
 			</div>
-			<img src="./img/start-screen-puppy.png" alt="puppy" class="main__desc__img">
+			<img src="./assets/images/start-screen-puppy.png" alt="puppy" class="main__desc__img">
 		</div>
 	</section>
 	<section class="about__section" id="about">
 		<div class="about__div">
 			<div class="about__div__img">
-				<img src="./img/about-pets.png" alt="dog and cat">
+				<img src="./assets/images/about-pets.png" alt="dog and cat">
 			</div>
 			<div class="about__div__desc">
 				<h2>About the shelter<br> “Cozy House”</h2>
@@ -83,42 +83,25 @@
 				Our friends who<br>are looking for a house
 			</h3>
 		</div>
-		<div class="find__cards">
-			<div class="card">
-				<img src="./img/pets-katrine.png" alt="cat">
-				<h4>Katrine</h4>
-				<button class="card__btn">
-					Learn more
+		<div class="cards__wrapper"></div>
+		</div>
+		<div>
+		<div class="row">
+				<button class="arrow arrow__left">
+					<svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
+					</svg>
 				</button>
-			</div>
-			<div class="card">
-				<img src="./img/pets-jennifer.png" alt="cat">
-				<h4>Jennifer</h4>
-				<button class="card__btn">
-					Learn more
+				<button class="arrow arrow__right">
+						<svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
+						</svg>
 				</button>
-			</div>
-			<div class="card">
-				<img src="./img/pets-woody.png" alt="cat">
-				<h4>Woody</h4>
-				<button class="card__btn">
-					Learn more
-				</button>
-			</div>
-			<button class="arrow">
-				<svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
-				</svg>
-			</button>
-			<button class="arrow">
-				<svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
-				</svg>
-			</button>
 		</div>
 		<button onclick='document.location="./pets.html"' class="find__btn">
-			Get to know the rest
+				Get to know the rest
 		</button>
+		</div>
 	</section>
 	<section class="help__section" id="help">
 		<h3>
@@ -230,7 +213,7 @@
 		</div>
 	</section>
 	<section class="donation__section" id="contacts">
-		<img src="./img/donation-dog.png" alt="dog">
+		<img src="./assets/images/donation-dog.png" alt="dog">
 		<div class="donation__desc">
 			<h3>
 				You can also<br> make a donation
@@ -291,9 +274,9 @@
 				<span onclick="window.open('https://www.google.com/maps/place/Minsk,+Minsk+Region/@53.88464,27.5933684,11z/data=!3m1!4b1!4m6!3m5!1s0x46dbcfd35b1e6ad3:0xb61b853ddb570d9!8m2!3d53.9006011!4d27.558972!16zL20vMGRseGo?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D')">18 South Park, London </span>
 			</div>
 		</div>
-		<img src="./img/footer-puppy.png" alt="puppy">
+		<img src="./assets/images/footer-puppy.png" alt="puppy">
 	</footer>
-	<script src="main.js"></script>
+	<script src="./assets/src/main.js" type="module"></script>
 </body>
  
 </html>

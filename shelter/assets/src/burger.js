@@ -1,7 +1,6 @@
+export function burger(){
 const burgerIcon = document.getElementsByClassName('menu__burger')[0]
 const burgerMenu = document.getElementsByClassName('burger-menu')[0]
-
-
 document.addEventListener('click',(e=>{
 	if(e.target.closest(".menu__burger")){
 		burgerIcon.classList.toggle('active')
@@ -18,3 +17,4 @@ document.addEventListener('click',(e=>{
 		setTimeout(()=>window.location.href = e.target.href,200)
 	}
 }))
+}
