@@ -1,5 +1,8 @@
 import { createElement } from "./createEl.js";
 import { createCard } from "./createCard.js";
+import { petsData } from "./jsonLoad.js";
+import { createModal } from "./popup.js";
+
 
 export function corusel(){
 	const arrOfCards = createCard()
@@ -33,7 +36,14 @@ export function corusel(){
 			}
 		}
 		if(!skip){	
-				newSlider.append(arrOfCards[i].cloneNode(true))
+				let clone = arrOfCards[i].cloneNode(true)
+				let name = clone.querySelector('.h4').textContent;
+				let petData = petsData.find(pet => pet.name === name);
+				clone.addEventListener("click",(e)=>{
+					document.body.classList.toggle("hidden")
+					document.body.append(createModal(petData))
+				})
+				newSlider.append(clone)
 				i = (i + 1) % arrOfCards.length;
 				continue;
 		}
@@ -48,7 +58,14 @@ export function corusel(){
 			}
 		}
 		if(!skip){	
-				newSlider1.append(arrOfCards[i].cloneNode(true))
+				let clone1 = arrOfCards[i].cloneNode(true)
+				let name = clone1.querySelector('.h4').textContent;
+				let petData = petsData.find(pet => pet.name === name);
+				clone1.addEventListener("click",(e)=>{
+					document.body.classList.toggle("hidden")
+					document.body.append(createModal(petData))
+				})
+				newSlider1.append(clone1)
 				i = (i + 1) % arrOfCards.length;
 				continue;
 				}

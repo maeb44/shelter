@@ -477,7 +477,7 @@ nav .menu__choise {
     max-width: 580px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 760px) {
   .find__section .find__cards .card:first-of-type {
     display: none;
   }
@@ -498,7 +498,7 @@ nav .menu__choise {
     max-width: 580px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 760px) {
   .cards__wrapper {
     max-width: 290px;
   }
@@ -924,6 +924,107 @@ footer {
 
 .number {
   background: #f1cdb3 !important;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  max-width: 900px;
+  width: 82%;
+  min-width: 240px;
+  box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  justify-content: space-between;
+  align-items: center;
+  background: hsl(0, 0%, 96%);
+  border-radius: 9px;
+}
+@media (max-width: 750px) {
+  .modal {
+    max-width: 240px;
+  }
+  .modal h3 {
+    font-size: 35px;
+  }
+  .modal h5 {
+    text-align: justify;
+  }
+}
+.modal__img {
+  flex: 1 1 55.4%;
+}
+@media (max-width: 750px) {
+  .modal__img {
+    display: none;
+  }
+}
+.modal__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px 88px 29px;
+  flex: 1 1 50%;
+}
+.modal__desc * {
+  color: #000;
+}
+@media (max-width: 1000px) {
+  .modal__desc {
+    gap: 20px;
+    padding: 10px 9px 37px 11px;
+  }
+}
+@media (max-width: 750px) {
+  .modal__desc {
+    padding: 10px;
+  }
+}
+.modal__desc_head {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 750px) {
+  .modal__desc_head {
+    align-items: center;
+  }
+}
+.modal__desc ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style-type: disc;
+  padding: 0;
+  margin: 0;
+  padding-left: 14px;
+}
+.modal__desc ul li::marker {
+  color: #f1cdb3;
+}
+.modal__desc ul strong {
+  font-weight: 700;
+}
+
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.modal__close_btn {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: -51px;
+  right: -32px;
 }
 
 @media (max-width: 769px) {

@@ -1,6 +1,6 @@
 import { petsData } from "./jsonLoad.js";
 import { createElement } from "./createEl.js";
-
+import { createModal } from "./popup.js";
 export function createCard(){
 	const arr = []
 	const data = petsData
@@ -25,6 +25,12 @@ export function createCard(){
 				className:"card__btn",
 				textContent:"Learn more"
 			})
+			const modal = createModal(el)
+			div.addEventListener('click',(e)=>{
+				document.body.classList.toggle("hidden")
+				document.body.append(modal)
+			})
+
 			div.append(divImg,p,button)
 			arr.push(div)
 		})
