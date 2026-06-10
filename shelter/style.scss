@@ -164,7 +164,7 @@ nav{
 		align-items: center;
 		justify-content: center;
 		gap:35px;
-		@media(max-width:767px) {
+		@media(max-width:769px) {
 			display: none;
 		}
 	}
@@ -175,7 +175,7 @@ nav{
 	position: relative;
 	z-index: 10;
 	display: none;
-	@media (max-width:767px) {
+	@media (max-width:769px) {
 		display: block;
 	}
 	span{
@@ -232,7 +232,7 @@ nav{
 		height: 100vh;
 		background: $color-dark-3xl;
 		text-align: center;
-		@media (min-width:768px) {
+		@media (min-width:769px) {
 		display: none;
 		}
 		&.active{
@@ -382,7 +382,6 @@ nav{
 		text-align: center;
 	}
 	.find__cards{
-		margin:auto ;
 		transition: transform 0.7s ease-out;
 		display: flex;
 		align-items: center;
@@ -714,6 +713,37 @@ footer{
 		padding: 42px 10px;
 	}
 }
+#find{
+	overflow: hidden;
+}
+.find__cards_second{
+		display: grid;
+		grid-template-columns: repeat(4,270px);
+		grid-template-rows: repeat(2,435px);
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		gap: 40px 30px;
+		transition: all 0.2s ease-out;
+
+		.card:nth-child(n+9){
+			display: none;
+		}
+		@media (max-width:1200px) {
+			.card:nth-child(n+7){
+				display: none;
+			}
+			grid-template-columns: repeat(2,270px);
+			grid-template-rows: repeat(3,435px);
+		}
+		@media (max-width:600px) {
+			.card:nth-child(n+4){
+				display: none;
+			}
+				grid-template-columns: repeat(1,270px);
+				grid-template-rows: repeat(3,435px);
+		}
+	}
 .h1-pets{
 	
 }
@@ -735,13 +765,18 @@ footer{
 		letter-spacing: 0.06em;
 		text-align: center;
 		position: static !important;
-		.active{
-			border: 2px solid $color-dark-3xl;
+		&.active{
 			color: $color-dark-3xl;
 		}
-		.passive{
+		&.passive{
 			border: 2px solid $color-dark-s;
 			color: $color-dark-s;
+		}
+		&.passive:hover{
+			cursor:auto;
+			border: 2px solid $color-dark-s ;
+			color: $color-dark-s ;
+			background: transparent;
 		}
 
 	}

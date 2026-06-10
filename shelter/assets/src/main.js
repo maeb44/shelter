@@ -4,5 +4,6 @@ import { corusel } from "./corusel.js"
 
 
 burger()
+
 corusel()
 

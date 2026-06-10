@@ -215,7 +215,7 @@ nav .menu__choise {
   justify-content: center;
   gap: 35px;
 }
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   nav .menu__choise {
     display: none;
   }
@@ -228,7 +228,7 @@ nav .menu__choise {
   z-index: 10;
   display: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   .menu__burger {
     display: block;
   }
@@ -284,7 +284,7 @@ nav .menu__choise {
   background: #292929;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .burger-menu {
     display: none;
   }
@@ -459,7 +459,6 @@ nav .menu__choise {
   text-align: center;
 }
 .find__section .find__cards {
-  margin: auto;
   transition: transform 0.7s ease-out;
   display: flex;
   align-items: center;
@@ -848,6 +847,42 @@ footer {
   }
 }
 
+#find {
+  overflow: hidden;
+}
+
+.find__cards_second {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  grid-template-rows: repeat(2, 435px);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 40px 30px;
+  transition: all 0.2s ease-out;
+}
+.find__cards_second .card:nth-child(n+9) {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .find__cards_second .card:nth-child(n+7) {
+    display: none;
+  }
+  .find__cards_second {
+    grid-template-columns: repeat(2, 270px);
+    grid-template-rows: repeat(3, 435px);
+  }
+}
+@media (max-width: 600px) {
+  .find__cards_second .card:nth-child(n+4) {
+    display: none;
+  }
+  .find__cards_second {
+    grid-template-columns: repeat(1, 270px);
+    grid-template-rows: repeat(3, 435px);
+  }
+}
+
 .div__btns {
   display: flex;
   align-items: center;
@@ -870,13 +905,18 @@ footer {
   text-align: center;
   position: static !important;
 }
-.div__btns .arrow .active {
-  border: 2px solid #292929;
+.div__btns .arrow.active {
   color: #292929;
 }
-.div__btns .arrow .passive {
+.div__btns .arrow.passive {
   border: 2px solid #cdcdcd;
   color: #cdcdcd;
+}
+.div__btns .arrow.passive:hover {
+  cursor: auto;
+  border: 2px solid #cdcdcd;
+  color: #cdcdcd;
+  background: transparent;
 }
 .div__btns .arrow:hover {
   background: #f1cdb3;
