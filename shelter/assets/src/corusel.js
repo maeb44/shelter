@@ -58,7 +58,6 @@ export function corusel(){
 	wrapper.replaceChildren()
 	wrapper.append(newSlider,mainSlider,newSlider1)
 }
-// corusel()
 document.addEventListener('click',(e)=>{
 		if (e.target.closest('.arrow__left')) {
 			e.target.disabled = true
@@ -98,6 +97,8 @@ document.addEventListener('click',(e)=>{
 			},700)
 		}
 	})
+corusel()
+
 
 
 

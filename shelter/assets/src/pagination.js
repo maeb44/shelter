@@ -8,12 +8,12 @@ export function pagination(){
 	return function(direction){
 
 			curPage+=direction;
-
 			const itemsPerPage = window.innerWidth>1200?8:
 			window.innerWidth>600?6:3;
-			if(curPage < 1 ||  curPage > cards.length/itemsPerPage) return null
-
 			const maximum = cards.length/itemsPerPage;
+
+			if(curPage>maximum) curPage=maximum
+
 			if(direction==-2) curPage = 1;
 			if(direction==+2) curPage = maximum;
 
@@ -55,7 +55,9 @@ nextPage(0)
 const section = document.querySelector('.find__cards_second')
 let isAnim = false;
 
-document.getElementsByClassName('div__btns')[0].addEventListener("click",(e)=>{
+
+document.getElementsByClassName('div__btns')[0]
+.addEventListener("click",(e)=>{
 	const id=e.target.id;
 	if(id === 'left'){
 		if(!isAnim){
@@ -76,7 +78,6 @@ document.getElementsByClassName('div__btns')[0].addEventListener("click",(e)=>{
 	
 	if(id === 'right'){
 		if(!isAnim){
-			console.log(1)
 			isAnim = true;
 			section.style.transform = "translateX(-100vw)"
 			setTimeout(()=>{
@@ -123,4 +124,9 @@ document.getElementsByClassName('div__btns')[0].addEventListener("click",(e)=>{
 				},230)
 			}
 	}
+})
+window.addEventListener('resize',()=>{
+	const itemsPerPage = window.innerWidth>1200?8:
+	window.innerWidth>600?6:3;
+	if(section.children.length!=itemsPerPage) nextPage(0)
 })
