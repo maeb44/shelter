@@ -77,6 +77,8 @@ export function corusel(){
 }
 document.addEventListener('click',(e)=>{
 		if (e.target.closest('.arrow__left')) {
+			const right = document.querySelector('.arrow__right')
+			right.disabled = true
 			e.target.disabled = true
 			const cards = document.querySelectorAll(".find__cards")
 			const gap = getComputedStyle(cards[0]).gap || 0;
@@ -88,6 +90,7 @@ document.addEventListener('click',(e)=>{
 					 card.style.transition = "none"
 					 card.style.transform = "translateX(0%)"
 					 setTimeout(()=>{
+						right.disabled = false
 						e.target.disabled = false
 						card.style.transition = ""},5)
 					}
@@ -95,7 +98,9 @@ document.addEventListener('click',(e)=>{
 			},700)
 	 }
    	if (e.target.closest('.arrow__right')) {
-			e.target.disabled = true
+			const left = document.querySelector('.arrow__left')
+			left.disabled = true;
+			e.target.disabled = true;
 			const cards = document.querySelectorAll(".find__cards")
 			const gap = getComputedStyle(cards[0]).gap || 0;
 			for(let card of cards){ card.style.transform = `translateX(calc(-100% - ${gap}))`}
@@ -107,7 +112,8 @@ document.addEventListener('click',(e)=>{
 					 card.style.transform = "translateX(0%)"
 					 setTimeout(()=>{
 						card.style.transition = ""
-						e.target.disabled = false
+						left.disabled = false;
+						e.target.disabled = false;
 					},5)
 					}
 					corusel()

@@ -788,6 +788,12 @@ footer {
     width: 300px;
   }
 }
+@media (cursor: coarse) {
+  .footer__card span:hover,
+  .footer__card svg:hover {
+    cursor: auto;
+  }
+}
 .footer__card div {
   display: flex;
   align-items: center;
@@ -1046,6 +1052,26 @@ footer {
     line-height: 160%;
     text-wrap: nowrap;
     letter-spacing: 0;
+  }
+}
+@media (pointer: coarse) {
+  button:hover {
+    cursor: none;
+  }
+  button:active {
+    border: 0px;
+  }
+  .arrow:hover {
+    background: hsl(0, 0%, 96%);
+    border: 2px solid #f1cdb3;
+  }
+  .card:hover {
+    cursor: auto;
+  }
+  .card:hover button {
+    cursor: auto;
+    border: 2px solid #f1cdb3;
+    background: hsl(0, 0%, 96%);
   }
 }
 
