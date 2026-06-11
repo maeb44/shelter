@@ -665,6 +665,12 @@ footer{
 		align-items: center;
 		width: 300px;
 	}
+	@media (cursor:coarse) {
+		span:hover,
+		svg:hover{
+			cursor: auto;
+		}
+	}
 	div{
 		display: flex;
 		align-items: center;
@@ -903,3 +909,23 @@ footer{
 
 }
 
+@media (pointer: coarse) {
+	button:hover{
+	cursor: none;
+	}
+	button:active{
+		border: 0px;
+	}
+	.arrow:hover{
+		background: $color-light-l;
+		border: 2px solid $color-primary;
+	}
+	.card:hover{
+	cursor: auto;
+	button{
+			cursor: auto;
+			border: 2px solid $color-primary;
+			background: $color-light-l;
+	}
+	}
+}
