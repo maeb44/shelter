@@ -166,6 +166,7 @@ a.active {
 }
 
 .main__section {
+  max-width: 100%;
   padding-bottom: 0px;
   padding-top: 30px;
   display: flex;
@@ -749,9 +750,19 @@ nav .menu__choise {
   }
 }
 
+.max-width {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.find {
+  background: hsl(0, 0%, 96%);
+}
+
 footer {
   width: 100%;
-  max-width: 1280px;
   display: flex;
   align-items: center;
   justify-content: center;
