@@ -117,6 +117,7 @@ section {
 }
 
 .h1 {
+  font-family: "Georgia", sans-serif;
   font-size: 32px;
   line-height: 110%;
   letter-spacing: 0.06em;
@@ -171,7 +172,7 @@ a.active {
   flex-direction: column;
   gap: 90px;
   background: #211f20;
-  background: linear-gradient(90deg, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%);
+  background: linear-gradient(90deg, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 70%);
 }
 @media (max-width: 769px) {
   .main__section {
@@ -306,7 +307,7 @@ nav .menu__choise {
 
 .main__desc {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 42px;
   flex-wrap: wrap;
@@ -324,13 +325,15 @@ nav .menu__choise {
 .main__desc__txt {
   width: 100%;
   max-width: 460px;
+  padding-top: 163px;
   display: flex;
   flex-direction: column;
   gap: 42px;
 }
-@media (max-width: 769px) {
+@media (max-width: 1200px) {
   .main__desc__txt {
     align-items: flex-start;
+    padding-top: 0px;
   }
 }
 @media (max-width: 400px) {
@@ -349,6 +352,11 @@ nav .menu__choise {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+}
+@media (max-width: 1200px) {
+  .main__desc__txt button {
+    margin: auto;
+  }
 }
 .main__desc__txt p {
   color: #cdcdcd;
