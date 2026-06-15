@@ -119,6 +119,7 @@ a:active{
 	text-decoration: underline $color-primary 3px;
 }
 a.active{
+	cursor:default;
 	text-decoration: underline $color-primary 3px;
 }
 
@@ -252,6 +253,7 @@ nav{
 	line-height: 160%;
 	color: $color-dark-s !important;
 	&.active{
+		cursor: default;
 		color: $color-light-s;
 	}
 }
@@ -688,7 +690,7 @@ footer{
 	@media (cursor:coarse) {
 		span:hover,
 		svg:hover{
-			cursor: auto;
+			cursor: default;
 		}
 	}
 	div{
@@ -799,7 +801,7 @@ footer{
 			color: $color-dark-s;
 		}
 		&.passive:hover{
-			cursor:auto;
+			cursor:default;
 			border: 2px solid $color-dark-s ;
 			color: $color-dark-s ;
 			background: transparent;
@@ -941,14 +943,14 @@ footer{
 		border: 2px solid $color-primary;
 	}
 	.card:hover{
-	cursor: auto;
+	cursor: default;
 	button{
-			cursor: auto;
+			cursor: default;
 			border: 2px solid $color-primary;
 			background: $color-light-l;
 	}
 	}
 	.menu__burger{
-		cursor: auto;
+		cursor: default;
 	}
 }
