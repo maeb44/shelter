@@ -176,6 +176,9 @@ nav{
 	position: relative;
 	z-index: 10;
 	display: none;
+	&:hover{
+		cursor: pointer;
+	}
 	@media (max-width:769px) {
 		display: block;
 	}
@@ -933,5 +936,8 @@ footer{
 			border: 2px solid $color-primary;
 			background: $color-light-l;
 	}
+	}
+	.menu__burger{
+		cursor: auto;
 	}
 }

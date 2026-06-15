@@ -229,6 +229,9 @@ nav .menu__choise {
   z-index: 10;
   display: none;
 }
+.menu__burger:hover {
+  cursor: pointer;
+}
 @media (max-width: 769px) {
   .menu__burger {
     display: block;
@@ -1080,6 +1083,9 @@ footer {
     cursor: auto;
     border: 2px solid #f1cdb3;
     background: hsl(0, 0%, 96%);
+  }
+  .menu__burger {
+    cursor: auto;
   }
 }
 
